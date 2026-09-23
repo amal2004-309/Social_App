@@ -1,41 +1,61 @@
-# 🚀 Project Title
+# 🚀 Social App
 
-A concise and catchy description of your project (e.g., "A modern social media application built for real-time post sharing, interaction, and user networking.").
+A feature-rich, interactive social media web application built with **React** and **Tailwind CSS**. Designed with a clean, responsive UI that includes full authentication flow, post creation, custom reactions, nested comments, and stories.
 
 ---
 
-## 🌟 Key Features
+## 📸 Key Features
 
-- 🔐 **Authentication:** User registration, login, and secure session management.
-- 📸 **Media Sharing:** Create posts, upload images, and add attachments.
-- 💬 **Interactions:** Like, comment on posts, and bookmark favorite content.
-- 🌙 **Theme Support:** Dynamic dark and light mode options.
-- 📱 **Responsive Design:** Seamless experience across desktop and mobile devices.
+* **🔐 Authentication & Security:**
+  * Login & Registration flows (`Login` / `Register`).
+  * Route protection for private pages (`ProtectedRoute`).
+  * Global user state management via `AuthContext`.
+
+* **📰 Posts & Feed Management:**
+  * Interactive main feed (`Home`) with loading placeholders (`PostSkeleton`).
+  * Post creation modal/form (`PostCreation`).
+  * Detailed single-post views (`PostDetails`).
+  * Custom reaction popovers (`ReactionsPopover`).
+
+* **💬 Nested Comments & Replies:**
+  * Create and manage comments on posts (`CreateComment`).
+  * Deeply nested reply chains (`NestedReplies` / `PostComment`).
+
+* **📖 Stories & Layout:**
+  * Interactive stories bar (`StoriesBar`).
+  * Navigation header (`Navbar`) paired with dual sidebars (`LeftSidebar` / `RightSidebar`).
+  * Dark & Light theme switching via `ThemeContext`.
+  * Global error handling and custom 404 pages (`ErrorBoundary` / `NotFound`).
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React / Vite / HTML5 / CSS3 / Tailwind CSS
-- **Backend:** Node.js / Express.js
-- **Database:** MongoDB
-- **Version Control:** Git & GitHub
+* **Framework:** [React](https://react.dev/) (Vite)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **State Management:** React Context API (`AuthContext`, `ThemeContext`)
+* **Icons & UI:** Custom SVG Components
 
 ---
 
-## 🚀 Getting Started
+## 📁 Project Structure
 
-Follow these steps to set up and run the project locally on your machine.
-
-### Prerequisites
-
-Make sure you have Node.js and npm installed:
-- [Node.js](https://nodejs.org/) (v16.x or higher)
-- npm or yarn
-
-### Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
-   cd your-repository-name
+```text
+src/
+├── api/                   # API service configurations & requests
+├── assets/                # Static assets & images
+├── Components/            # UI Components
+│   ├── CreateComment/     # Comment creation forms
+│   ├── ErrorBoundary/     # Error handling fallback UI
+│   ├── Home/              # Feed & Main page
+│   ├── Layout/            # Base app layout wrapper
+│   ├── Login/ & Register/ # Authentication pages
+│   ├── Navbar/            # Top navigation bar
+│   ├── Post/              # Post cards & reaction popovers
+│   ├── PostComment/       # Comment list & nested replies
+│   ├── PostCreation/      # New post form/modal
+│   ├── PostDetails/       # Single post view
+│   ├── Profile/           # User profile views
+│   ├── Sidebar/           # Left and Right sidebars
+│   └── Stories/           # Stories bar component
+└── Context/               # Global state contexts (Auth & Theme)
