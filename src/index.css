@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --fb-bg: #f0f2f5;
+  --fb-surface: #ffffff;
+  --fb-surface-hover: #f2f2f2;
+  --fb-secondary-surface: #e4e6eb;
+  --fb-text: #050505;
+  --fb-secondary-text: #65676b;
+  --fb-border: #e4e6eb;
+  --fb-primary: #1877f2;
+  --fb-primary-hover: #166fe5;
+  --fb-active-bg: #e7f3ff;
+  --fb-divider: #ced0d4;
+  color-scheme: light;
+}
+
+html.dark,
+[data-theme="dark"] {
+  --fb-bg: #18191A;
+  --fb-surface: #242526;
+  --fb-surface-hover: #3a3b3c;
+  --fb-secondary-surface: #3a3b3c;
+  --fb-text: #e4e6eb;
+  --fb-secondary-text: #b0b3b8;
+  --fb-border: #393a3b;
+  --fb-primary: #2d88ff;
+  --fb-primary-hover: #1877f2;
+  --fb-active-bg: #263951;
+  --fb-divider: #393a3b;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--fb-bg);
+  color: var(--fb-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom Facebook surface utility classes */
+.bg-fb-bg {
+  background-color: var(--fb-bg);
+}
+
+.bg-fb-surface {
+  background-color: var(--fb-surface);
+}
+
+.bg-fb-hover:hover {
+  background-color: var(--fb-surface-hover);
+}
+
+.bg-fb-secondary {
+  background-color: var(--fb-secondary-surface);
+}
+
+.text-fb-primary {
+  color: var(--fb-text);
+}
+
+.text-fb-secondary {
+  color: var(--fb-secondary-text);
+}
+
+.border-fb {
+  border-color: var(--fb-border);
+}
+
+.text-fb-blue {
+  color: var(--fb-primary);
+}
+
+.bg-fb-blue {
+  background-color: var(--fb-primary);
+}
+
+/* Reaction popup bounce animations */
+@keyframes reactionPop {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.85);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-reaction-pop {
+  animation: reactionPop 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Smooth custom scrollbars matching Facebook */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fb-border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fb-secondary-text);
+}
